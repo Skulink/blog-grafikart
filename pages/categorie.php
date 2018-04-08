@@ -1,7 +1,11 @@
 <?php
 
-$categorie = \App\Table\Categorie::find($_GET['id']);
+use App\Table\Categorie;
+use App\Table\Article;
+
+$categorie = Categorie::find($_GET['id']);
 var_dump($categorie);
-$article = \App\Table\Article::lastByCategory($_GET['id']);
+$article = Article::lastByCategory($_GET['id']);
+$categories = Categorie::All();
 
 ?>
